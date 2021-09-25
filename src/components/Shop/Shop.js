@@ -7,12 +7,14 @@ const Shop = () => {
     const [products,setProducts]=useState([]);
     const [cart,setCart]=useState([]);
 
+    // Data load form json file
     useEffect(()=>{
         fetch('./data.JSON')
         .then(res=>res.json())
         .then(data=>setProducts(data));
     },[]);
 
+    // data calculate and set to setCat
     const addToCart=(product)=>{
         const newCart=[...cart];
         const existing=cart.find(data=>data.id===product.id);
@@ -27,11 +29,13 @@ const Shop = () => {
 
     return (
         <div className="shop-container">
+            {/* product component */}
             <div className="product-container">
                 {
                     products.map(product=><Product key={product.id} product={product} addToCart={addToCart}></Product>)
                 }
             </div>
+            {/* cart component */}
             <div className="cart-container">
                 <Cart cart={cart}></Cart>
             </div>

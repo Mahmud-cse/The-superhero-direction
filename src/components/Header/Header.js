@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Header.css';
 
 const Header = () => {
+    // Header Section
     return (
         <div className="text-center text-primary header-container">
             <h1>All available Cats</h1>

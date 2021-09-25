@@ -1,11 +1,13 @@
 import React from 'react';
 
 const Cart = (props) => {
+    // destructuring 
     const {cart}=props;
     let totalQuantity=0;
     let totalPrice=0;
     let addedCat='';
 
+    // data calculation
     for(const product of cart){
         if(!product.quantity){
             product.quantity=1;
@@ -16,6 +18,7 @@ const Cart = (props) => {
     }
 
     return (
+        // cart value set
         <div>
             <h3>Total Items: {totalQuantity}</h3>
             <h3>Total Price: {totalPrice}</h3>
