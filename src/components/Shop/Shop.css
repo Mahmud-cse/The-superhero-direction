@@ -1,5 +1,6 @@
 .shop-container {
     display: flex;
+    margin-bottom: 30px;
 }
 
 .product-container {
